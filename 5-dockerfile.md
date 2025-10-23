@@ -53,17 +53,23 @@ docker build -t <nombre imagen>:<tag> .
 ### Ejecutar el archivo Dockerfile y construir una imagen en la versión 1.0
 No olvides verificar en qué directorio se encuentra el archivo Dockerfile
 ```
-
+docker build -t mi-apache:1.0 .
 ```
 
 **¿Cuántos pasos se han ejecutado?**
-# RESPONDER 
+
+Se ejecutan 6 pasos de los 6 docker file respectivamente.
 
 ### Inspeccionar la imagen creada
+```
+docker inspect mi-apache:1.0
+```
 # COMPLETAR CON UNA CAPTURA
 
 **Modificar el archivo index.html para incluir su nombre y luego crear una nueva versión de la imagen anterior**
 **¿Cuántos pasos se han ejecutado? ¿Observa algo diferente en la creación de la imagen**
+
+Se procesasn todas las instrucciones pero solo los pasos 4, 5 y 6 se reconstruyen sobre el sistema de archivos, y los pasos 1, 2 y 3 se obtienen directamente del caché.
 
 ## Mecanismo de caché
 Docker usa un mecanismo de caché cuando crea imágenes para acelerar el proceso de construcción y evitar la repetición de pasos que no han cambiado. Cada instrucción en un Dockerfile crea una capa en la imagen final. Docker intenta reutilizar las capas de una construcción anterior si no han cambiado, lo que reduce significativamente el tiempo de construcción.
@@ -75,14 +81,16 @@ Docker usa un mecanismo de caché cuando crea imágenes para acelerar el proceso
 
 ### Crear un contenedor a partir de las imagen creada, mapear todos los puertos
 ```
-
+docker run -d --name mi-web -P mi-apache:2.0
 ```
 
 ### ¿Con que puerto host se está realizando el mapeo?
-# COMPLETAR CON LA RESPUESTA
+
+Docker asigna un puerto aleatorio.
 
 **¿Qué es una imagen huérfana?**
-# COMPLETAR CON LA RESPUESTA
+
+Una imagen sin una etiqueta asociada y además de eso no está siendo usada por ningún contenedor o versión de imagen.
 
 ### Identificar imágenes huérfanas
 ```
