@@ -1,3 +1,1 @@
-# COMPLETAR  
-Comparando sus conocimientos antes de hacer la práctica con sus conocimientos después de hacer la tarea, explicar los principales aprendizajes logrados para beneficio de su formación profesional.  
-Si solucionó un problema presentado al realizar la práctica también se debe documentar.
+En esta práctica aprendí sobre como podemos configurar a los contenedores para que sean confiables y responsables ya que podemos limitar los recursos permitiendo la convivencia cuidando del host. Para los dockerfiles entendpi que cada instruccion es importante y se va poniendo una coapa sobre otra, no vuelve a construir una instrucción si no la tocas, ya que quedan guardadas en el caché. Me pareció interesante y muy util para prontos proyectos.
